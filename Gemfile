@@ -78,3 +78,5 @@ gem 'mini_racer'
 group :development, :test do
   gem 'capybara','>= 2.15'
 end
+
+gem 'devise'
