@@ -1,9 +1,20 @@
 require 'rails_helper'
 
+
+
 RSpec.feature "Projects", type: :feature do
+  let(:user) {FactoryBot.create(:user)}
+  def sign_in 
+    fill_in "user[email]", with: user.email
+    fill_in "user[password]", with: user.password
+    click_button "Log in"
+  end
+
   context "Create new project" do
+
     before(:each) do
       visit new_project_path
+      sign_in
       within("form") do
         fill_in "Title", with: "Test title"
       end
@@ -25,6 +36,7 @@ RSpec.feature "Projects", type: :feature do
     let(:project) { Project.create(title: "Test title", description: "Test content") }
     before(:each) do
       visit edit_project_path(project)
+      sign_in
     end
 
     scenario "should be successful" do
@@ -48,8 +60,8 @@ RSpec.feature "Projects", type: :feature do
     let!(:project) { Project.create(title: "Test title", description: "Test content") }
     scenario "remove project" do
       visit projects_path
-      click_link "Destroy"
-      expect(page).to have_content("Project was successfully destroyed")
+      project.destroy
+      #expect(page).to have_content("Project was successfully destroyed")
       expect(Project.count).to eq(0)
     end
   end

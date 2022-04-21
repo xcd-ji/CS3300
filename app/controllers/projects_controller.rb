@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, :except => [:show, :index]
   # GET /projects or /projects.json
   def index
     @projects = Project.all
@@ -16,13 +16,12 @@ class ProjectsController < ApplicationController
   end
 
   # GET /projects/1/edit
-  before_action : authenticate_user!
   def edit
   end
 
   # POST /projects or /projects.json
-  before_action : authenticate_user!
   def create
+  
     @project = Project.new(project_params)
 
     respond_to do |format|
@@ -50,7 +49,6 @@ class ProjectsController < ApplicationController
   end
 
   # DELETE /projects/1 or /projects/1.json
-  before_action : authenticate_user!
   def destroy
     @project.destroy
 
