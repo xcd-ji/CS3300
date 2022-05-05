@@ -87,7 +87,7 @@
                       <div class="btn-group">
                         <a type="button" class="btn btn-sm btn-outline-secondary" <%= link_to 'Show', project %></a>                    
                         <a type="button" class="btn btn-sm btn-outline-secondary"<%= link_to 'Edit', edit_project_path(project) %></a>
-                        <a type="button" class="btn btn-sm btn-outline-secondary"<%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+                        <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-outline-secondary" %>
                       </div>
                     </div>
                   </div>
