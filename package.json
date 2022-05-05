@@ -1,5 +1,12 @@
 {
   "name": "CS3300",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "^5.4.3",
+    "node-sass": "^7.0.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {
+    "webpack": "^5.72.0"
+  }
 }
