@@ -86,4 +86,3 @@ gem 'bootstrap', '~> 4.6.1'
 
 gem 'jquery-rails'
 
-gem 'webpacker', '~> 5.0'
