@@ -87,6 +87,8 @@
 
     <main role="main">
 
+    <%= link_to 'Sign In', new_user_session_url %>
+
       <section class="jumbotron text-center">
         <div class="container">
           <h1 class="jumbotron-heading">My Work</h1>
@@ -125,8 +127,17 @@
         </div>
       </div>
 
-    </main>
+      <% if !current_user.present? %> 
+      <a class="text-white"<%= link_to 'Sign In', new_user_session_url %></a><br>
+      <a class="text-white"<%= link_to 'Sign Up', new_user_registration_url %></a><br>
 
+      <% elsif current_user.present? %>
+      <a class="text-white"<%= link_to 'Sign Out', destroy_user_session_url, :method => :delete %></a><br>
+      <% end %>
+
+
+    </main>
+    </body>
     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
@@ -180,3 +191,4 @@
 <%= link_to 'New Project', new_project_path %>
 
 ----->
+
