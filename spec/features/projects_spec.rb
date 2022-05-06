@@ -23,6 +23,7 @@ RSpec.feature "Projects", type: :feature do
     scenario "should be successful" do
       fill_in "Description", with: "Test description"
       click_button "Create Project"
+      
     end
 
     scenario "should fail" do
@@ -43,7 +44,7 @@ RSpec.feature "Projects", type: :feature do
         fill_in "Description", with: "New description content"
       end
       click_button "Update Project"
-
+      
     end
 
     scenario "should fail" do
