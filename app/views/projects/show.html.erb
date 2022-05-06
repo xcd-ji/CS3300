@@ -1,3 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Portfolio</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">Donald Kim</h4>
+              <p class="text-muted">Computer Science Major, Game Design Minor, Japanese Minor, Musician<br><br>
+              Contact: <br>
+              xcdgospel@gmail.com</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Navigation</h4>
+                <ul class="list-unstyled">
+                <a class="text-white"<%= link_to 'Home', Project %></a><br>
+
+                <% if !current_user.present? %> 
+                <a class="text-white"<%= link_to 'Sign In', new_user_session_url %></a><br>
+                <a class="text-white"<%= link_to 'Sign Up', new_user_registration_url %></a><br>
+
+                <% elsif current_user.present? %>
+                <a class="text-white"<%= link_to 'Sign Out', destroy_user_session_url, :method => :delete %></a><br>
+                <% end %>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">            
+            <strong>Portfolio</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+    <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal"><%= @project.title %></h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">Description</h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li><%= @project.description %></li>
+                </ul>
+                <a type="button" class="btn btn-sm btn-outline-secondary" <%= link_to 'Edit', edit_project_path(@project) %></a>                    
+                <a type="button" class="btn btn-sm btn-outline-secondary"<%= link_to 'Back', projects_path %></a>
+              </div>
+            </div>
+    
+    
+            
+          </div>
+    </main>
+        </body>
+
+
+<!------
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -12,3 +97,4 @@
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
+----->
