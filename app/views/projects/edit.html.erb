@@ -58,12 +58,33 @@
     </div>
   </div>
 </header>
+<main>
+  <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+              <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Editing Project</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li><%= render 'form', project: @project %></li>
+                </ul>
+                <%= link_to 'Show', @project, :class => "btn btn-sm btn-outline-secondary"  %>                    
+                <%= link_to 'Back', projects_path, :class => "btn btn-sm btn-outline-secondary" %>
+              </div>
+            </div>
+    
+    
+            
+          </div>
+</main>
     </body>
 </html>
-
+<!------
 <h1>Editing Project</h1>
 
 <%= render 'form', project: @project %>
 
 <%= link_to 'Show', @project %> |
 <%= link_to 'Back', projects_path %>
+----->
