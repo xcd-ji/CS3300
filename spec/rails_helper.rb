@@ -70,5 +70,8 @@ SimpleCov.start 'rails' do
   add_filter '/app/channels'
   add_filter '/app/mailers'
   add_filter '/app/helpers'
+  add_filter '/app/jobs'
+  add_filter '/app/models/user.rb'
+  add_filter '/app/models/application_record.rb'
   end
 end
